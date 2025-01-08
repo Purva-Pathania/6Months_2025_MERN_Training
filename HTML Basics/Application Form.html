@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+</head>
+<body>
+    <h2 align="center">APPLICATION FORM</h2>                              <!--HEADING-->
+    <form action="submit.html" method="post">                                                                <!--FORM CREATION-->
+    <fieldset><legend>Personal Details</legend>
+    <table width="1300px" height="300">                   <!--TABLE CREATION FOR PERSONAL DETAILS BLOCK-->
+        <tr>                                                          <!--FIRST ROW DATA-->
+            <td><label>Applicant's full name</label></td>
+            <td><select>     
+                <option>Mr</option> 
+                <option>Ms</option>                                           <!--SELECT TAG-->
+                <option selected>--Select--</option>
+            </select>
+            <input type="text" name="applicant name" min="2" max="20" required>
+            </td>
+            <td>Care Of</td>
+            <td>Parents<input type="radio" name="p" checked>
+            Guardian<input type="radio" name="g">
+            </td>
+        </tr>
+        <tr>                                                            <!--SECOND ROW DATA-->
+            <td><label>Father's Name</label></td>
+            <td><select disabled>
+                <option selected>Mr</option>
+            </select>
+            <input type="text" name="father name" min="2" max="20">
+            </td>
+            <td><label>Mother's Name</label></td>
+            <td><select disabled>
+                <option selected>Mrs.</option>
+            </select>
+            <input type="txt" name="mother name" min="2" max="20">
+            </td>
+        </tr>
+        <tr>                                                              <!--THIRD ROW DATA-->
+            <td><label>Gender</label></td>
+            <td>Male<input type="radio">
+                Female<input type="radio">
+                Others<input type="radio">
+            </td>
+            <td><label>Date of Birth</label></td>
+            <td><input type="date" name="dob" required></td>
+        </tr>
+        <tr>                                                               <!--FOURTH ROW DATA-->
+            <td><label>Marital Status</label></td>
+            <td><select>
+                <option selected>--Select--</option>
+                <option>Married</option>
+                <option>Unmarried</option>
+            </select></td>
+            <td><label>Category</label></td>
+            <td><select>
+                <option>General</option>
+                <option>SC/ST</option>
+                <option>Others</option>
+                <option selected>--Select--</option>
+            </select></td>
+        </tr>
+        <tr>                                                                 <!--FIFTH ROW DATA-->
+            <td><label>Handicapped</label></td>
+            <td>No<input type="radio" checked>
+                Yes<input type="radio">
+            </td>
+            <td><label>Ex-Serviceman</label></td>
+            <td>No<input type=radio checked>
+                Yes<input type="radio">
+            </td>
+        </tr>
+        <tr>                                                                <!--SIXTH ROW DATA-->
+            <td><label>EWS</label></td>
+            <td>No<input type="radio" checked>
+                Yes<input type="radio">
+            </td>
+            <td><label>Religion</label></td>
+            <td><select>
+                <option>Hindu</option>
+                <option>Muslim</option>
+                <option>Sikh</option>
+                <option selected>--Select--</option>
+            </select></td>
+        </tr>
+    </table>                                                <!--TABLE CREATED-->         
+    </fieldset>
+    <fieldset><legend>Contact Details</legend>
+    <table width="1300px" height="200">                    <!--TABLE CREATION FOR CONTACT DETAILS BLOCK-->
+        <tr>                                                                    <!--FIRST ROW DATA-->
+            <td><label>Mobile Number</label></td>
+            <td><input type="tel" minlength="10" maxlength="10" required></td>
+            <td><label>Email ID</label></td>
+            <td><input type="email" name="email" required></td>
+        </tr>
+        <tr>                                                                     <!--SECOND ROW DATA-->
+            <td><label>Address Line 1</label></td>
+            <td><input type="txt" name="address" min="5" max="50"></td>
+            <td><label>Address Line 2</label></td>
+            <td><input type="txt" name="address" min="5" max="50"></td>
+        </tr>
+        <tr>                                                                     <!--THIRD ROW DATA-->
+            <td><label>City</label></td>
+            <td><input type="txt" name="city"></td>
+            <td><label>State</label></td>
+            <td><select>
+                <option>PunjabGujaratHyderabadHaryanaJammu</option>
+                <option>Maharashtra</option>
+                <option selected>--Select--</option>
+            </select></td>
+        </tr>
+        <tr>                                                                       <!--FOURTH ROW DATA-->
+            <td><label>Pin Code</label></td>
+            <td><input type="txt" name="code" min="5" max="8"></td>
+        </tr>
+    </table>
+    </fieldset>
+    <fieldset><legend>Qualification Details</legend>
+    <table width="1300" height="200px">                        <!--TABLE CREATION FOR QUALIFICATION DETAILS BLOCK-->
+        <tr>                                                   <!--FIRST ROW DATA-->
+            <td><h3>Sr No.</h3></td>
+            <td><h3>Qualification</h3></td>
+            <td><h3>Board/University</h3></td>
+            <td><h3>Passing Year</h3></td>
+            <td><h3>Max Marks</h3></td>
+            <td><h3>Marks Obtain</h3></td>
+            <td><h3>Percentage</h3></td>
+        </tr>
+        <tr>                                                        <!--SECOND ROW DATA-->
+            <td>1</td>
+            <td><select>
+                <option>Secondary Education</option>
+                <option selected>--Select--</option>
+            </select></td>
+            <td><input type="text" name="board/university"></td>
+            <td><input type="text" name="year" size="2"></td>
+            <td><input type="text" name="maxmarks" size="4" ></td>
+            <td><input type="text" name="marks" size="5"></td>
+            <td><input type="text" name="percentage" size="2"></td>
+        </tr>
+        <tr>                                                            <!--THIRD ROW DATA-->
+            <td>2</td>
+            <td><select>
+                <option>Higher Secondary Education</option>
+                <option selected>--Select--</option>
+            </select></td>
+            <td><input type="text" name="board/university"></td>
+            <td><input type="text" name="year" size="2"></td>
+            <td><input type="text" name="maxmarks" size="4" ></td>
+            <td><input type="text" name="marks" size="5"></td>
+            <td><input type="text" name="percentage" size="2"></td>
+        </tr>
+        <tr>                                                            <!--FOURTH ROW DATA-->
+            <td>3</td>
+            <td><select>
+                <option>Bachelor of technology</option>
+                <option>BCA</option>
+                <option>BCom</option>
+                <option selected>--Select--</option>
+            </select></td>
+            <td><input type="text" name="board/university"></td>
+            <td><input type="text" name="year" size="2"></td>
+            <td><input type="text" name="maxmarks" size="4" ></td>
+            <td><input type="text" name="marks" size="5"></td>
+            <td><input type="text" name="percentage" size="2"></td>
+        </tr>
+        <tr>                                                             <!--FIFTH ROW DATA-->
+            <td>4</td>
+            <td><select>
+                <option>MTech</option>
+                <option>MCom</option>
+                <option>MCA</option>
+                <option selected>--Select--</option>
+            </select></td>
+            <td><input type="text" name="board/university"></td>
+            <td><input type="text" name="year" size="2"></td>
+            <td><input type="text" name="maxmarks" size="4" ></td>
+            <td><input type="text" name="marks" size="5"></td>
+            <td><input type="text" name="percentage" size="2"></td>
+        </tr>
+    </table>                                                               <!--TABLE CREATED-->
+    </fieldset>
+    <fieldset><legend>Language Knowledge</legend>
+    <table width="1300px">                                     <!--TABLE CREATION FOR LANGUAGE KNOWLEDGE BLOCK-->
+        <tr>                                                              <!--FIRST ROW DATA-->
+            <td><label>Language</label></td>
+            <td>Reading</td>
+            <td>Writing</td>
+            <td>Spoken</td>
+        </tr>
+        <tr>                                                               <!--SECOND ROW DATA-->
+            <td><label>Hindi</label></td>
+            <td><input type="checkbox" name="reading"></td>
+            <td><input type="checkbox" name="writing"></td>
+            <td><input type="checkbox" name="spoken"></td>
+        </tr>
+        <tr>                                                                <!--THIRD ROW DATA-->
+            <td><label>English</label></td>
+            <td><input type="checkbox" name="reading"></td>
+            <td><input type="checkbox" name="writing"></td>
+            <td><input type="checkbox" name="spoken"></td>
+        </tr>
+        <tr>                                                               <!--FOURTH ROR DATA-->
+            <td><label>Urdu</label></td>
+            <td><input type="checkbox" name="reading"></td>
+            <td><input type="checkbox" name="writing"></td>
+            <td><input type="checkbox" name="spoken"></td>
+        </tr>
+    </table>                                                                <!--TABLE CREATED-->
+    </fieldset>
+    <fieldset><legend>Identification Details</legend>      <!--TABLE CREATIION FOR IDENTIFICATION DETAILS-->
+    <table width="1000px">
+        <tr>                                                          <!--FIRST ROW DATA-->
+            <td><label>Aadhar Card Number</label>
+            <input type="text" name="aadhar_number"></td>
+            <td><label>PAN Card Number</label>
+            <input type="text" name="pan_card_number"></td>
+        </tr>
+        <tr>                                                               <!--SECOND ROW DATA-->
+            <td><label>Upload Photo</label>
+            <input type="file" name="documents"></td>
+            <td><label>Upload Signature</label>
+            <input type="file" name="image"></td>
+        </tr>
+    </table>                                                              <!--TABLE CREATED-->
+    </fieldset>
+    <br>                                                                <!--NEWLINE-->
+    <table align="center">                                          <!--TABLE CREATION FOR ALIGNMENT--> 
+        <tr>
+        <td><button type="submit">Submit</button>
+        <button type="button">Back</button></td>
+        </tr>
+    </table>                                                             <!--TABLE CLOSED-->
+    </form>                                                              <!--FORM CREATED-->
+</body>
+</html>
