@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links & I-frames</title>
+</head>
+<body>
+    <!--TABLE CREATION-->
+    <table border="2" cellspacing="0" width="1000px" height="500px">
+        <!--FIRST ROW-->
+        <tr>
+            <td width="100"><img src="Songs/Music.jpg " width="100px" height="100px"></td>
+            <td colspan="2" align="center"><h2>JSR MUSIC</h2></td>
+        </tr>
+        <!--FIRST ROW TERMINATED-->
+        <!--SECOND ROW CREATED-->
+        <tr height="100">
+            <td><font size="5">&nbsp;&nbsp;NAME</font></td>
+            <td><font size="5">&nbsp;&nbsp;ABOUT</font></td>
+            <td><font size="5">&nbsp;&nbsp;DOWNLOAD</font></td>
+        </tr>
+        <!--SECOND ROW TERMINATED-->
+        <!--THIRD ROW CREATED-->
+        <tr>
+            <!--LINK CREATION FOR HINDI SONGS-->
+            <td><a href="Hindi.html" target="output">Hindi</a>    
+            <br> 
+            <!--LINK CREATION FOR PUNJABI SONGS-->
+            <a href="Punjabi.html" target="output">Punjabi</a></td>    
+            <!--FRAME CREATED FOR 2ND COL-->
+            <td><iframe name="output" width="400px" height="160px"></iframe></td>  
+            <!--FRAME CREATED FOR 3RD COL-->
+            <td width="400" align="center"><iframe name="houtput" width="400px" height="160px"></iframe></td>
+        </tr>
+        <!--THIRD ROW TERMINATED-->
+        <!--FOURTH ROW CREATED-->
+        <tr>
+            <td colspan="3" align="center"><h3>&#169;purva</h3></td>
+        </tr>
+        <!--FOURTH ROW TERMINATED-->
+    </table>
+    <!--TABLE CREATED-->
+</body>
+</html>
