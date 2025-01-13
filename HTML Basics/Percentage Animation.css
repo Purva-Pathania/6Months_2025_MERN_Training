@@ -1,0 +1,34 @@
+.star{
+    height:100px;
+    width:100px;
+    background-color:red;
+    position: relative;
+    animation: demo 5s linear 2s  alternate;
+
+}
+@keyframes demo{
+    0%{
+        top:400px;
+        left:200px;
+    }
+    20%{
+        top:100px;
+        left:300px;
+    }
+    40%{
+        top:400px;
+        left:400px;
+    }
+    60%{
+        top:200px;
+        left:100px;
+    }
+    80%{
+        top:200px;
+        left:500px;
+    }
+    100%{
+        top:400px;
+        left:200px;
+    }
+}
