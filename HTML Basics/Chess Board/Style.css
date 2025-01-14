@@ -1,0 +1,38 @@
+body{
+    background-color:skyblue;
+}
+.main{
+    height:500px;
+    width:500px;
+    background-color:grey;
+    margin-left:400px;
+    margin-top:40px;
+    padding:10px 10px 10px 10px;
+    font-size:40px;
+    text-align:center;
+}
+.row1{
+    height:62px;
+    width:500px;
+}
+.child1{
+    height:62px;
+    width:62px;
+    background-color:white;
+    float:left;
+}
+.child2{
+    height:62px;
+    width:62px;
+    background-color:black;
+    float:left;
+}
+.child1 .fa-regulark{
+   color:black;
+   text-align:center;
+   font-size:40px;
+}
+.child2 .fa-regular{
+   color:white;
+   font-size:40px;
+}
