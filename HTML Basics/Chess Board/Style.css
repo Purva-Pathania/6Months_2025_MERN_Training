@@ -1,6 +1,7 @@
 body{
     background-color:skyblue;
 }
+/* Styling of Main*/
 .main{
     height:500px;
     width:500px;
@@ -11,22 +12,26 @@ body{
     font-size:40px;
     text-align:center;
 }
+/* ROW STYLING*/
 .row1{
     height:62px;
     width:500px;
 }
+/*WHITE BOX STYLING*/
 .child1{
     height:62px;
     width:62px;
     background-color:white;
     float:left;
 }
+/*BLACK BOX STYLING*/
 .child2{
     height:62px;
     width:62px;
     background-color:black;
     float:left;
 }
+/*TEXT STYLING FOR 1ST AND 2ND ROW*/
 .child1 .fa-regulark{
    color:black;
    text-align:center;
@@ -36,3 +41,13 @@ body{
    color:white;
    font-size:40px;
 }
+/*TEXT STYLING FOR 7TH AND 8TH ROW*/
+.child1 .fa-solid{
+    color:black;
+    text-align:center;
+    font-size:40px;
+ }
+ .child2 .fa-solid{
+    color:white;
+    font-size:40px;
+ }
