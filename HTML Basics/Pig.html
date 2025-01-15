@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teddy</title>
+    <style>
+        /* STYLING OF MAIN DIV--*/
+        .main{
+            height:500px;
+            width:400px;
+            margin:10px 100px 100px 450px;
+            position:relative;
+        }
+        /* STYLING OF FACE DIV--*/
+        .main .face{
+            height:200px;
+            width:200px;
+            margin: 50px 100px;
+            background-color:#fbc4cc;
+            border-style:solid;
+            border-width:0px;
+            border-radius:100px;
+            z-index:2;
+            position:relative;
+        }
+        /* STYLING OF EYES DIV--*/
+        .main .face .eye{
+            height:10px;
+            width:10px;
+        }
+        .main .face .eye .eye1{
+            height:10px;
+            width:10px;
+            background-color:black;
+            border-width:5px;
+            border-style:solid;
+            margin: 70px 50px;
+            border-radius:10px;
+            float:left;
+        }
+        .main .face .eye .eye2{
+            height:10px;
+            width:10px;
+            background-color:black;
+            border-width:5px;
+            border-style:solid;
+            border-radius:10px;
+            margin:-90px 120px;
+            float:left;
+        }
+        /* STYLING OF MOUTH DIV--*/
+        .main .face .mouth{
+            height: 60px;
+            width: 60px;
+            background-color: #c2354c;
+            border-width:0px;
+            border-style:solid;
+            border-radius:35px;
+            margin:80px 62px;
+            position:absolute;
+        }
+        .main .face .mouth .mouth1{
+            height: 5px;
+            width: 5px;
+            background-color: black;
+            border-width:4px;
+            border-style:solid;
+            border-radius:10px;
+            margin:30px 10px;
+        }
+        .main .face .mouth .mouth2{
+            height: 5px;
+            width: 5px;
+            background-color: black;
+            border-width:4px;
+            border-style:solid;
+            border-radius:10px;
+            margin:-44px 30px;
+        }
+        /* STYLING OF EAR DIV--*/
+        .main .ear1{
+            height: 60px;
+            width: 60px;
+            background-color: #fbc4cc;
+            border-width:0px;
+            border-style:solid;
+            border-radius:35px;
+            margin:-260px 90px;
+            overflow:hidden;
+            float:left;
+            z-index:0;
+            position:absolute;
+        }
+        .main .ear2{
+            height: 60px;
+            width: 60px;
+            background-color: #fbc4cc;
+            border-width:0px;
+            border-style:solid;
+            border-radius:35px;
+            margin:-260px 240px;
+            overflow:hidden;
+            float:left;
+            z-index:0;
+            position:absolute;
+        }
+        /* STYLING OF STOMACH DIV--*/
+        .main .stomach{
+            height:300px;
+            width:300px;
+            background-color:#c2354c;
+            position:absolute;
+            border-style:solid;
+            border-width:0px;
+            border-radius:150px;
+            margin:-80px 50px;
+            float:left;
+            z-index:1;
+        }
+        /* STYLING OF FOOT DIV--*/
+        .main .foot1{
+            height: 60px;
+            width: 60px;
+            background-color:#ffc0cb;
+            border-width:0px;
+            border-style:solid;
+            border-radius:35px;
+            margin:190px 100px;
+            float:left;
+            z-index:2;
+            position:relative;
+        }
+        .main .foot2{
+            height: 60px;
+            width: 60px;
+            background-color: #ffc0cb;
+            border-width:0px;
+            border-style:solid;
+            border-radius:35px;
+            margin:190px -20px;
+            z-index:2;
+            position:relative;
+            float:left;
+        }
+        /* STYLING OF TRIANGLE DIV--*/
+        .main .triangle{
+            height:0px;
+            width:0px;
+            border-left:transparent 100px solid;
+            border-top: transparent 100px solid;
+            border-bottom: #ffc0cb 100px solid;
+            margin:-50px 330px; 
+            
+        }
+    </style>
+</head>
+<body>
+    <!--PARENT DIV-->
+    <div class="main">
+        <!--FACE DIV-->
+        <div class="face">
+            <!--EYES DIV-->
+                <div  class="eye">
+                   <div class="eye1"></div>
+                   <div class="eye2"></div>
+                </div>
+                <!--MOUTH DIV-->
+                <div class="mouth">
+                    <div class="mouth1"></div>
+                    <div class="mouth2"></div>
+                </div>
+            <!--CLOSING OF FACE DIV-->
+        </div>
+                <!--EAR DIV-->
+                <div class="ear1"></div>
+                <div class="ear2"></div>
+                <!--STOMACH DIV-->
+        <div class="stomach"></div>
+        <!--FOOT DIV-->
+        <div class="foot1"></div>
+        <div class="foot2"></div>
+        <!--TRIANGLE DIV-->
+        <div class="triangle"></div>
+        <!--CLOSING OF PARENT DIV-->
+    </div>
+</body>
+</html>
