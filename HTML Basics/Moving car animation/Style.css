@@ -1,0 +1,72 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.back{
+    height:600px;
+    background-image: url("PIC/nature.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.container{
+    height:100px;
+    transform:translateY(400px) ;
+}
+.back .container .car{
+    height:400px;
+    background-image: url("PIC/car.png");
+    background-repeat: no-repeat;
+    background-size: 20% 20%;
+    position: relative;
+    animation:move 10s linear infinite;
+}
+@keyframes move{
+    from{
+        top:0px;
+        left:0px;
+    }
+    to{
+        top:0px;
+        left:1000px;
+       
+    }
+}
+.back .container .car .tyre{
+    height:50px;
+    width:220px;
+    display:flex;
+    justify-content: space-between;
+    position:absolute;
+    margin-top:40px;
+    transform:translateX(20px);
+}
+.back .container .car .tyre .tyre1{
+    height:40px;
+    width:40px;
+    background-color: black;
+    border: black solid 5px;
+    border-radius:50%;
+    animation:rotate 10s linear infinite;
+}
+hr{
+    height:30px;
+    width:30px;
+    color:black;
+}
+.back .container .car .tyre .tyre2{
+    height:40px;
+    width:40px;
+    background-color: black;
+    border: black solid 5px;
+    border-radius:50%;
+    animation:rotate 10s linear infinite;
+}
+@keyframes  rotate{
+    from{
+     transform: rotate(0deg);
+    }
+    to{
+     transform: rotate(360deg);
+    }
+ }
+
