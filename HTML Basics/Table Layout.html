@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Layout</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <!--Main Class Container-->
+    <div class="container text-light fs-4" >
+        <!--First-Row-->
+        <div class="row">
+            <!--Column-->
+            <div class="col-8 bg-info pb-4 mt-5">Header</div>
+        </div>
+        <!--Second Row-->
+        <div class="row ">
+            <!--Main Column that is column1-->
+            <div class="col-md-8 ">
+                <!--Sub Row in Second Row-->
+                <div class="row">
+                    <!--First Column-->
+                    <div class="col-4 bg-warning pb-4 me-1  mt-2 pb-5">Small Box</div>
+                    <!--Second Column-->
+                    <div class="col-4 bg-danger pb-4 me-1  mt-2 pb-5">Small Box</div>
+                    <!--Third Column-->
+                    <div class="col bg-success pb-4 me-1  mt-2 pb-5">Small Box</div>
+                </div>
+                <!--Sub Row in Second Row-->
+                <div class="row">
+                    <div class="col bg-dark pb-5 me-1  mt-2">Main Content</div>
+                </div>
+            </div>
+            <!--Second column in 2nd Row-->
+            <div class="col-4 bg-primary mt-2 pb-5">Sidebar</div>
+        </div>
+        <!--Third Row-->
+        <div class="row">
+            <div class="col-12 bg-info mt-2 pb-4">Footer</div>
+        </div>
+    </div>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
