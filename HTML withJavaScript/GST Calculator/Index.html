@@ -1,0 +1,32 @@
+<!--Create a GST calculator which takes amount from prompt and prints gst, amount and total-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Calculation</title>
+</head>
+<body>
+    <button onclick="getMsg()">GST Calculator</button>
+    <h4 id="v1"></h4>
+    <h4 id="gst"></h4>
+    <h4 id="Ot"></h4>
+    <h4 id="fp"></h4>
+    <script>
+        function getMsg(){
+            var amount = prompt("Enter Amount : ")
+            console.log(amount)
+            document.getElementById("v1").innerText = "Amount : "+parseInt(amount)
+            var GST = prompt("Enter GST Amount : ")
+            console.log(GST)
+            document.getElementById("gst").innerText = "GST AMOUNT  : "+parseInt(GST)
+            var result = parseFloat(amount)*parseFloat(GST/100)
+            document.getElementById("Ot").innerHTML = "Original Amount  : "+parseFloat(result)
+            var final_result = parseFloat(amount)+parseFloat(result)
+            document.getElementById("fp").innerHTML = "Final price : "+parseFloat(final_result)
+
+        }
+    </script>
+</body>
+</html>

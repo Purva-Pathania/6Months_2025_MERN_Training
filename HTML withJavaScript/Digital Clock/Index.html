@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Time In India</h1>
+    <div class="time">
+    <div id="clock"></div>
+    <div id="hour"></div>
+    <div id="minute"></div>
+    <div id="sec"></div>
+    </div>
+    <script>
+        function getMsg(){
+            setInterval(()=>{
+                let date = new Date()
+                document.getElementById("clock").innerText=date
+                let hours = date.getHours()
+                document.getElementById("hour").innerText=hours+" Hours"
+                let minutes = date.getMinutes()
+                document.getElementById("minute").innerText=minutes+" Minutes"
+                let seconds = date.getSeconds()
+                document.getElementById("sec").innerText=seconds+" Seconds"
+            },1000)
+        }
+        getMsg()
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!--1.Create a calculator with two prompts a and b and print its sum in console and document-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <button onclick="getMsg()">Calculation</button>
+    <h4 id="V1"></h4>
+    <h4 id="V2"></h4>
+    <h4 id="sum"></h4>
+    <script>
+        function getMsg(){
+            var value1 = prompt("Enter value1 : ")
+            console.log(value1)
+            document.getElementById("V1").innerText = "Value1 = "+parseInt(value1)
+            var value2 = prompt("Enter value2 : ")
+            console.log(value2)
+            document.getElementById("V2").innerText = "Value2 = "+parseInt(value2)
+            document.getElementById("sum").innerHTML = "Addition of value1 & value2 = "+parseInt(parseInt(value1)+parseInt(value2))
+        }
+    </script>
+</body>
+</html>

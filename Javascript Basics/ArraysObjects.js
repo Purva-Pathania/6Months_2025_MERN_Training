@@ -49,10 +49,18 @@ elem("asd","asdf","werws")
 
 //4.Create an array named numbers containing 50 numbers. Then, create a smaller array that includes all the numbers from the numbers array that are divisible by three.
 
-let numbers = new Array(50)
+let numbers = []
+for(let i=0;i<50;i++){
+    numbers.push(i+1)
+}
 console.log(numbers)
-let small=numbers.slice(numbers % 3 == 0);
-console.log(small)
+let smaller_array = []
+for(let i=0;i<numbers.length;i++){
+    if(numbers[i]%3==0){
+    smaller_array.push(numbers[i])
+    }
+}
+console.log(smaller_array)
 
 
 //5.Create an array named i_am_array of 20 elements,
@@ -65,14 +73,20 @@ console.log(small)
 //f) Print the type of teen_guna array as well as i_am_array
 //e.g. (teen_guna type is: _________) Print in this way
 
-let i_am_array=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-for(let i=0;i<i_am_array.length;i++){
-    console.log(i_am_array[i])
+let i_am_array = []
+for (let i=0;i<20;i++){
+    i_am_array.push(i+1)
 }
-let teen_guna=i_am_array.slice(0*3,20*3)
-for(let i=0;i<teen_guna.length;i++){
-    console.log(teen_guna[i])
+console.log(i_am_array)
+i_am_array.forEach((ele,index)=>{
+    console.log(ele)
+})
+
+let teen_guna = []
+for(let y of i_am_array){
+    teen_guna.push(y*3)
 }
+console.log(teen_guna)
 console.log(teen_guna.length)
-console.log("teen_guna type is:",typeof(teen_guna))
-console.log("i_am_array type is:",typeof(i_am_array))
+console.log("teen_guna type is: ",typeof(teen_guna))
+console.log("i_am_array type is: ",typeof(i_am_array))

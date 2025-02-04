@@ -1,0 +1,35 @@
+.parent{
+    background-image: url("PIC/bg1.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+}
+.special .row .col-md-7 .card-body .card-title{
+    position:relative;
+    animation: demo 3s linear alternate;
+}
+@keyframes demo{
+    from{
+        top:0px;
+        left:-200px;
+    }
+    to{
+        top:0px;
+        left:0px;
+    }
+}
+.special .row .col-md-5 img{
+    position:relative;
+    animation: remo 3s linear alternate;
+}
+@keyframes remo{
+    from{
+        top:-200px;
+        left:0px;
+    }
+    to{
+        top:0px;
+        left:0px;
+    }
+}
