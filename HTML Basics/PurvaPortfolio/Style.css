@@ -33,3 +33,9 @@
         left:0px;
     }
 }
+.specialcont:hover{
+    transform: scale(1.2);
+}
+.specialele:hover{
+    transform: scale(1.2);
+}
