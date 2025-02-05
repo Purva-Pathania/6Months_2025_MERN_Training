@@ -6,7 +6,7 @@
     <title>Digital Clock</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="getMsg()">
     <h1>Time In India</h1>
     <div class="time">
     <div id="clock"></div>
@@ -27,7 +27,6 @@
                 document.getElementById("sec").innerText=seconds+" Seconds"
             },1000)
         }
-        getMsg()
     </script>
 </body>
 </html>

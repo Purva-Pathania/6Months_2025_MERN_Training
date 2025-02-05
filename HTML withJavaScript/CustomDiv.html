@@ -1,0 +1,39 @@
+<!--Custom div - where user enters height, width, color, text and bgcolor and a div is created with given values-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Div</title>
+</head>
+<body>
+    <label>Height: </label>
+    <input type="text" id="ip1"><br>
+    <label>Width: </label>
+    <input type="text" id="ip2"><br>
+    <label>color: </label>
+    <input type="text" id="ip3"><br>
+    <label>background-color: </label>
+    <input type="text" id="ip4"><br>
+    <label>Text: </label>
+    <input type="text" id="ip5"><br>
+    <button onclick="getDiv()">Create</button>
+    <div id="res"></div>
+    <script>
+        function getDiv(){
+            var a = document.getElementById("ip1").value
+            var b = document.getElementById("ip2").value
+            var c = document.getElementById("ip3").value
+            var d = document.getElementById("ip4").value
+            var e = document.getElementById("ip5").value
+
+            document.getElementById("res").style.height = a
+            document.getElementById("res").style.width = b
+            document.getElementById("res").style.color = c
+            document.getElementById("res").style.backgroundColor = d
+            document.getElementById("res").innerHTML = e
+        }
+    </script>
+</body>
+</html>

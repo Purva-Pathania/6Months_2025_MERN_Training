@@ -1,0 +1,36 @@
+<!--BMI calculator- where user enters height and weight and it calculates BMI and tells, underweight, normal or overweight-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <label>Enter Height: </label>
+    <input type="text" id="ip1"><br>
+    <label>Enter Weight: </label>
+    <input type="text" id="ip2"><br><br>
+    <button onclick="getNews()">Submit</button><br>
+    <div id="res"></div>
+    <p id="out"></p>
+    <script>
+        function getNews(){
+            var a = parseFloat(document.getElementById("ip1").value)
+            var b = parseFloat(document.getElementById("ip2").value)
+            
+            var c = b/(a*a)
+            document.getElementById("res").innerHTML="Result: "+parseFloat(c)
+            if(c<18.5)
+                document.getElementById("out").innerHTML = "Person is Underweight"
+            else if( c>=18.5 && c<24.9)
+                document.getElementById("out").innerHTML = "Person is Normal Weight"
+            else if(c>=25 && c<29.9)
+                document.getElementById("out").innerHTML = "Person is Overweight" 
+            else 
+                document.getElementById("out").innerHTML = "Person is Obese" 
+        }
+        </script>
+</body>
+</html>

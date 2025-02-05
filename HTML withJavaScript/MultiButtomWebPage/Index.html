@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="child">
+            <input type="text" id="ip1">
+            <input type="text" id="ip2">
+        </div>
+        <div class="road">
+            <button onclick="getRes()">Button1</button>
+            <button onclick="getAlert()">Button2</button>
+            <button onclick="getData()">Button3</button>
+            <button onclick="concatenate()">Button4</button>
+            <button onclick="imgB()">Button5</button>
+        </div>
+        <div class="child2">
+            <div id="c1">Hello</div>
+            <div id="c2">Bye</div>
+        </div>
+        <img id="un">
+    </div>
+    <script>
+        function getRes(){
+            var a=document.getElementById("ip1").value 
+            document.getElementById("ip2").value=a
+        }
+        function getAlert(){
+            var b=document.getElementById("ip2").value 
+            alert(b)
+            var di = "Hello"
+            alert(di)
+            var div = "Bye"
+            alert(div)
+        }
+        function getData(){
+            var b=document.getElementById("ip2").value
+            document.getElementById("c2").innerHTML=b
+        }
+        function concatenate(){
+            var a=document.getElementById("ip1").value 
+            var b=document.getElementById("ip2").value
+            var c= "Hello"+a+b
+            document.getElementById("c1").innerHTML= c
+        }
+        function imgB(){
+            document.getElementById("un").src="pic.jpg"
+            document.getElementById("ip1").type="radio"
+            document.getElementById("ip2").type="checkbox"
+        }
+    </script>
+</body>
+</html>
