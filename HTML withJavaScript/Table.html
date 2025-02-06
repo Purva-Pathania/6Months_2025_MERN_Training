@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <label>Enter Number: </label>
+    <input id="num"><br>
+    <label>Enter Start Number: </label>
+    <input id="start"><br>
+    <label>Enter End Number: </label>
+    <input id="end"><br>
+    <button onclick="getTable()">Submit</button>
+    <div id="div"></div>
+    <script>
+        function getTable(){
+            var num = parseInt(document.getElementById("num").value)
+            var start = parseInt(document.getElementById("start").value)
+            var end = parseInt(document.getElementById("end").value)
+            for(let i=start;i<=end;i++){
+                document.getElementById("div").innerHTML+=num+"*"+i+"="+num*i+"<br>"
+            }
+        }
+    </script>
+</body>
+</html>

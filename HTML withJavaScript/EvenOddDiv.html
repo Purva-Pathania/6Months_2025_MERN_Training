@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Odd</title>
+</head>
+<body id="div">
+    <label>Enter Number: </label>
+    <input id="num"><br>
+    <button onclick="getNum()">Submit</button>
+    <script>
+        function getNum(){
+            var num = parseInt(document.getElementById("num").value)
+                for(let i=1;i<=num;i++){
+                    let div = document.createElement("div")
+                    div.style.height="100px";
+                    div.style.width="200px";
+                    div.style.margin="10px";
+                    if(num%2==0)
+                    div.style.backgroundColor="red"
+                    else
+                    div.style.backgroundColor="yellow"
+
+                    document.getElementById("div").appendChild(div);
+                }
+        }
+    </script>
+</body>
+</html>
