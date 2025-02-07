@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+</head>
+<body>
+    <label>Enter Product: </label>
+    <input id="input" onblur="getPro()"><span id="error" style="color:red"></span>
+    <button onclick="add()" id="a">Add</button><br>
+    <div id="hid" hidden></div>
+    <button onclick="show()">Show</button>
+    <div id="sh"></div>
+    <script>
+        function getPro(){
+            var inp = document.getElementById("input").value 
+            if(inp.trim().length<=0){
+                document.getElementById("error").innerHTML="Invalid"
+            }
+            else{
+                document.getElementById("error").innerHTML=""
+            }
+        }
+        function add(){
+            var inp = document.getElementById("input").value 
+            document.getElementById("hid").innerHTML+=inp+"<br>";
+            input.value=""
+        }
+        function show(){
+            var abc = document.getElementById("hid").innerHTML
+            document.getElementById("sh").innerHTML+=abc
+        }
+    </script>
+</body>
+</html>

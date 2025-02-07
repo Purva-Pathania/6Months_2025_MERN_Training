@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+    <style>
+        .error1{
+            color:red;
+        }
+        .error2{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return checkForm()" action="submit.html">
+        <label>Email: </label>
+        <input id="email" onblur="checkInp1()"><span id="error1" class="error1"></span>
+        <br>
+        <label>Password: </label>
+        <input id="pass" onblur="checkInp2()"><span id="error2" class="error2"></span>
+        <br>
+        <button>Submit</button>
+    </form>
+        <script>
+            function checkInp1(){
+                let email = document.getElementById("email").value
+                let pattern1 = /^purva+\@+gmail+\.+com$/
+                if(pattern1.test(email)){
+                    document.getElementById("error1").innerHTML=""
+                }
+                else{
+                    document.getElementById("error1").innerHTML="Invalid Email"
+                }
+            }
+            function checkInp2(){
+                let pass = document.getElementById("pass").value
+                let pattern2 = /^2025$/
+                if(pattern2.test(pass)){
+                    document.getElementById("error2").innerHTML=""
+                }
+                else{
+                    document.getElementById("error2").innerHTML="Invalid Password"
+                }
+            }
+            function checkForm(){
+                let pattern1 = /^purva+\@+gmail+\.+com$/
+                let pattern2 = /^2025$/
+                let email = document.getElementById("email").value
+                let pass = document.getElementById("pass").value
+                if(!pattern1.test(email) || !pattern2.test(pass)){
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+        </script>
+</body>
+</html>
