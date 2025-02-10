@@ -1,0 +1,79 @@
+let arr1=[]
+function getAdd(){
+    var add = document.getElementById("add").value 
+    arr1.push(add)
+    document.getElementById("add").value=""
+    let select =  document.getElementById("opt");
+    let option =  document.createElement("option");
+    option.text=add;
+    select.appendChild(option)
+    document.getElementById("last").innerHTML="Product-"+add+" Added in the list"
+    setTimeout(()=>{
+        document.getElementById("last").innerHTML=""
+    },1000)
+}
+let arr2=[]
+function getPrice(){
+    var price = document.getElementById("price").value
+    let select =  document.getElementById("opt")
+    arr2.push(price)
+    document.getElementById("price").value=""
+    let lastSelectedValue = select.value
+    let currentSelectedValue = select.value
+    if(currentSelectedValue==lastSelectedValue){
+        document.getElementById("last").innerHTML="Successfully set "+ currentSelectedValue + " price to " +price
+    }
+    setTimeout(()=>{
+        document.getElementById("last").innerHTML=""
+    },1000)
+}
+function showPrice(){
+    document.getElementById("update").innerHTML="Product Price Updated"
+    setTimeout(()=>{
+        document.getElementById("update").innerHTML=""
+    },1000)
+    for(let i=0;i<arr1.length;i++){
+        document.getElementById("data").innerHTML+="<option>"+arr1[i]+" $ "+arr2[i]+"/Unit"
+    }
+}
+let arr3=[]
+function cart(){
+    alert("Added to cart")
+    let quantity = document.getElementById("quantity").value
+    arr3.push(quantity)
+    document.getElementById("quantity").value=""
+}
+function showNumb(numb){
+        document.getElementById("quantity").value=numb
+}
+
+function pay(){
+    let select =  document.getElementById("opt").innerHTML;
+    let total = arr2.map((num,index)=>num*arr3[index])
+    let priElement=parseFloat(document.getElementById("pri").innerText)||0
+    let amountTotal = priElement ? parseFloat(priElement.innerText)||0:0;
+    amountTotal+=parseFloat(total.reduce((sum,value)=>sum+value))
+    let body = document.getElementById("bodyy")
+    let row = document.createElement("tr")
+    row.innerHTML=
+    `<tr>
+        <td>${select}</td>
+        <td>${arr2.join("<br>")}</td>
+        <td>${arr3.join("<br>")}</td>
+        <td>${total.join("<br>")}</td>
+    </tr>`
+    body.appendChild(row)
+    let tax = amountTotal*0.05
+    let amountDue = amountTotal + tax
+    document.getElementById("pri").innerHTML=amountTotal
+    document.getElementById("taxx").innerHTML=tax
+    document.getElementById("due").innerHTML=amountDue
+    let date = new Date()
+    document.getElementById("date").innerText = date.toLocaleDateString()
+    document.getElementById("time").innerText = date.toLocaleTimeString()
+    var result = document.getElementById("lastReceipt").innerHTML
+    document.getElementById("receipt").innerHTML=result
+}
+
+
+
