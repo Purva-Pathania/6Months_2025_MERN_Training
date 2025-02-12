@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Movie</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        ul{
+            margin-left:560px;
+        }
+        img{
+            height:200px;
+            width:200px;
+        }
+        .container{
+            display:flex;
+            justify-content: center;
+        }
+        input{
+            width:50px;
+            height:50px;
+        }
+        .main{
+            display:flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess The Movie</h1>
+    <ul type="disk">
+        <li>Its Bollywood Movie</li>
+        <li>It was released in 2018</li>
+        <li>Related to IT sector</li>
+        <li>Starring Utkarsh Sharma</li>
+    </ul>
+    </li>
+    <div class="container">
+        <div>
+            <img src="PIC/image1.png" id="letter1">
+        </div>
+        <div>
+            <img src="PIC/image1.png" id="letter2">
+        </div>
+        <div>
+            <img src="PIC/image1.png" id="letter3">
+        </div>
+        <div>
+            <img src="PIC/image1.png" id="letter4">
+        </div>
+        <div>
+            <img src="PIC/image1.png" id="letter5">
+        </div>
+        <div>
+            <img src="PIC/image1.png" id="letter6">
+        </div>
+    </div>
+    <div class="main">
+        <div>
+            <input type="text" id="input1" maxlength="1" oninput="getInp1()">
+        </div>
+        <div>
+            <input type="text" id="input2" maxlength="1" oninput="getInp2()">
+        </div>
+        <div>
+            <input type="text" id="input3" maxlength="1" oninput="getInp3()">
+        </div>
+        <div>
+            <input type="text" id="input4" maxlength="1" oninput="getInp4()">
+        </div>
+        <div>
+            <input type="text" id="input5" maxlength="1" oninput="getInp5()">
+        </div>
+        <div>
+            <input type="text" id="input6" maxlength="1" oninput="getInp6()">
+        </div>
+    </div>
+    <script src="Style.js"></script>
+</body>
+</html>
