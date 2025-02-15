@@ -7,6 +7,9 @@ import ProductCard from './Components/ProductCard'
 import ContactCard from './Components/ContactCard'
 import Weather from './Components/Weather'
 import DivWithCssProperties from './Components/DivWithCssProperties'
+import StudentsMap from './Components/StudentsMap'
+import EmployeeMap from './Components/EmployeeMap'
+import ZomatoData from './Components/ZomatoData'
 function App() {
   return (
     <div>
@@ -28,6 +31,9 @@ function App() {
       <Weather city="Chandigarh" temp="11°C" hum="31%" wc="Sunny"/>
       <Weather city="Amritsar" temp="13°C" hum="23%" wc="Partly cloudy"/>
       <DivWithCssProperties/>
+      <StudentsMap/>
+      <EmployeeMap/>
+      <ZomatoData/>
     </div>
   )
 }

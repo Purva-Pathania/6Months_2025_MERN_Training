@@ -3,6 +3,7 @@ export default function Student(){
         <div>
             <h1> First Student Record</h1>
             <table style={{border:"1px solid black", width:"100%", borderCollapse:"collapse"}}>
+                <thead>
                 <tr>
                     <td style={{border:"1px solid black",padding:"5px"}}>S.No.</td>
                     <td style={{border:"1px solid black",padding:"5px"}}>Name</td>
@@ -10,6 +11,8 @@ export default function Student(){
                     <td style={{border:"1px solid black",padding:"5px"}}>Class</td>
                     <td style={{border:"1px solid black",padding:"5px"}}>Class Teacher</td>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td style={{border:"1px solid black",padding:"5px"}}>1</td>
                     <td style={{border:"1px solid black",padding:"5px"}}>Abhay</td>
@@ -17,9 +20,11 @@ export default function Student(){
                     <td style={{border:"1px solid black",padding:"5px"}}>10th</td>
                     <td style={{border:"1px solid black",padding:"5px"}}>Mansimran</td>
                 </tr>
+                </tbody>
             </table>
             <h1> Second Student Record</h1>
             <table style={{border:"1px solid black", width:"100%", borderCollapse:"collapse"}}>
+                <thead>
                 <tr>
                     <td style={{border:"1px solid black",padding:"5px"}}>S.No.</td>
                     <td style={{border:"1px solid black",padding:"5px"}}>Name</td>
@@ -27,6 +32,8 @@ export default function Student(){
                     <td style={{border:"1px solid black",padding:"5px"}}>Class</td>
                     <td style={{border:"1px solid black",padding:"5px"}}>Class Teacher</td>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td style={{border:"1px solid black",padding:"5px"}}>1</td>
                     <td style={{border:"1px solid black",padding:"5px"}}>Arohee</td>
@@ -34,6 +41,7 @@ export default function Student(){
                     <td style={{border:"1px solid black",padding:"5px"}}>10th</td>
                     <td style={{border:"1px solid black",padding:"5px"}}>Ameesha</td>
                 </tr>
+                </tbody>
             </table>
         </div>
     )
