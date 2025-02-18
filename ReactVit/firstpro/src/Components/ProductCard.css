@@ -1,9 +1,8 @@
 .product{
-    height:260px;
+    height:300px;
     width:500px;
     background-color: beige;
     color:black;
-    margin-left: 100px;
 }
 .product .proch{
     color:brown;

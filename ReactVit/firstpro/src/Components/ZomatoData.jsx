@@ -127,17 +127,28 @@ export default function ZomatoData(){
     ]
     return(
         <>
-        <h1><u>Zomato Data with Name, Rating & Image Url</u></h1>
-        {data.map((el,index)=>{
-            return(
-                <Fragment key={index}>
-                    <h2 style={{color:"Brown"}}><u>For {index+1} Data :</u></h2>
-                    <h3>{el.info.name}</h3>
-                    <h3>{el.info.rating.rating_text}</h3>
-                    <h3>{el.info.image.url}</h3>
-                </Fragment>
-            )
-        })}
+        <h1><u>Zomato Data with Names, Ratings & Images</u></h1>
+        <table className="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Rating</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {data?.map((el,index)=>(
+                    <tr key={index}>
+                        <td>{index+1}</td>
+                        <td>{el?.info?.name}</td>
+                        <td>{el?.info?.rating?.rating_text}</td>
+                        <td><img src={el?.info?.image?.url} style={{height:"100px", width:"100px"}}/></td>
+                   </tr>
+                    )
+                )}
+            </tbody>
+        </table>
         </>
     )
 }

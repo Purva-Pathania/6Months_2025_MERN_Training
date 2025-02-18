@@ -2,21 +2,25 @@
 
 export default function ShoppingCart(props){
     return(
-        <div style={{marginLeft:"200px"}}>
-        <table border={"1px"} cellSpacing={"0px"}>
-            <tbody>
+        <>
+        <table className="table table-bordered">
+            <thead>
                 <tr>
                     <th style={{padding:"20px"}}>Name</th>
                     <th style={{padding:"20px"}}>Price</th>
                     <th style={{padding:"20px"}}>Quantity</th>
                 </tr>
-                <tr>
-                    <td style={{padding:"10px"}}>{props.name}</td>
-                    <td style={{padding:"10px"}}>{props.price}</td>
-                    <td style={{padding:"10px"}}>{props.quantity}</td>
+            </thead>
+            <tbody>
+                {props.shoppingCart.map((el,index)=>(
+                <tr key={index}>
+                    <td style={{padding:"10px"}}>{el.sname}</td>
+                    <td style={{padding:"10px"}}>{el.price}</td>
+                    <td style={{padding:"10px"}}>{el.quantity}</td>
                 </tr>
+                ))}
             </tbody>
         </table>
-        </div>
+        </>
     )
 }
