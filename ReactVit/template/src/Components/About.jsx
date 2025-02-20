@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function About(){
     return(
         <>
@@ -21,12 +23,12 @@ export default function About(){
       </button>
       <div className="collapse navbar-collapse" id="navbarCollapse">
         <div className="navbar-nav ms-auto p-4 p-lg-0">
-          <a href="index.html" className="nav-item nav-link">
+          <Link to={"/"} className="nav-item nav-link">
             Home
-          </a>
-          <a href="about.html" className="nav-item nav-link active">
+          </Link>
+          <Link to={"/about"} className="nav-item nav-link active">
             About
-          </a>
+          </Link>
           <div className="nav-item dropdown">
             <a
               href="#"
@@ -64,9 +66,9 @@ export default function About(){
               </a>
             </div>
           </div>
-          <a href="contact.html" className="nav-item nav-link">
+          <Link to={"/contact"} className="nav-item nav-link">
             Contact
-          </a>
+          </Link>
         </div>
         <a
           href=""

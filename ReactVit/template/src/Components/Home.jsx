@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Home(){
     return(
         <>
@@ -20,12 +21,12 @@ export default function Home(){
     </button>
     <div className="collapse navbar-collapse" id="navbarCollapse">
       <div className="navbar-nav ms-auto p-4 p-lg-0">
-        <a href="index.html" className="nav-item nav-link active">
+        <Link to={"/"} className="nav-item nav-link active">
           Home
-        </a>
-        <a href="about.html" className="nav-item nav-link">
+        </Link>
+        <Link to={"/about"} className="nav-item nav-link">
           About
-        </a>
+        </Link>
         <div className="nav-item dropdown">
           <a
             href="#"
@@ -63,9 +64,9 @@ export default function Home(){
             </a>
           </div>
         </div>
-        <a href="contact.html" className="nav-item nav-link">
+        <Link to={"/contact"} className="nav-item nav-link">
           Contact
-        </a>
+        </Link>
       </div>
       <a
         href=""

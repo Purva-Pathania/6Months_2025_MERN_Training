@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Contact(){
     return(
         <>
@@ -20,12 +21,12 @@ export default function Contact(){
     </button>
     <div className="collapse navbar-collapse" id="navbarCollapse">
       <div className="navbar-nav ms-auto p-4 p-lg-0">
-        <a href="index.html" className="nav-item nav-link">
+        <Link to={"/"} className="nav-item nav-link">
           Home
-        </a>
-        <a href="about.html" className="nav-item nav-link">
+        </Link>
+        <Link to={"/about"} className="nav-item nav-link">
           About
-        </a>
+        </Link>
         <div className="nav-item dropdown">
           <a
             href="#"
@@ -63,9 +64,9 @@ export default function Contact(){
             </a>
           </div>
         </div>
-        <a href="contact.html" className="nav-item nav-link active">
+        <Link to={"/contact"} className="nav-item nav-link active">
           Contact
-        </a>
+        </Link>
       </div>
       <a
         href=""
