@@ -25,17 +25,49 @@
 }
 @keyframes remo{
     from{
-        top:-200px;
-        left:0px;
+        top:0px;
+        left:200px;
     }
     to{
         top:0px;
         left:0px;
     }
 }
-.specialcont:hover{
-    transform: scale(1.2);
+@keyframes react{
+    from{
+        top:0px;
+        left:0px;
+    }
+    to{
+        top:0px;
+        left:200px;
+    }
 }
-.specialele:hover{
-    transform: scale(1.2);
+@media(min-width:992px){
+.scroll-animation1{
+    position: relative;
+    animation: react 3s linear alternate;
+    animation-timeline:view();
+}}
+@keyframes js{
+    from{
+        top:0px;
+        left:0px;
+    }
+    to{
+        top:0px;
+        left:-200px;
+    }
 }
+@media(min-width:992px){
+.scroll-animation2{
+    position: relative;
+    animation: js 3s linear alternate;
+    animation-timeline:view();
+}}
+
+.jew:hover{
+    transform: scale(1.2);
+    transition: transform 2s ease-in-out;
+}
+
