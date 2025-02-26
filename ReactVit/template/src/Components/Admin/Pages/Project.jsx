@@ -1,14 +1,108 @@
 import { Link } from "react-router-dom";
 import PageTitle from "../Layouts/PageTitle";
 
-export default function Faqs(){
+export default function Project(){
     return(
         <>
   <main className="main">
-          <PageTitle>FAQs</PageTitle>
-  {/* FAQs Start */}
-  <div className="container-fluid faq py-5">
-    <div className="container py-5">
+          <PageTitle>Project</PageTitle>
+  {/* Project Start */}
+  <div className="container-fluid project pt-5">
+    <div className="container pt-5">
+      <div
+        className="text-center mx-auto pb-5 wow fadeInUp"
+        data-wow-delay="0.1s"
+        style={{ maxWidth: 800 }}
+      >
+        <h4 className="text-primary">Our Projects</h4>
+        <h1 className="display-4">Explore Our Latest Projects</h1>
+      </div>
+      <div
+        className="project-carousel owl-carousel wow fadeInUp"
+        data-wow-delay="0.1s"
+      >
+        <div className="project-item h-100 wow fadeInUp" data-wow-delay="0.1s">
+          <div className="project-img">
+            <img
+              src="/assets/img/projects-1.jpg"
+              className="img-fluid w-100 rounded"
+              alt="Image"
+            />
+          </div>
+          <div className="project-content bg-light rounded p-4">
+            <div className="project-content-inner">
+              <div className="project-icon mb-3">
+                <i className="fas fa-chart-line fa-4x text-primary" />
+              </div>
+              <p className="text-dark fs-5 mb-3">Business Growth</p>
+              <Link to="#" className="h4">
+                Business Strategy And Investment Planning Growth Consulting
+              </Link>
+              <div className="pt-4">
+                <Link className="btn btn-light rounded-pill py-3 px-5" to="#">
+                  Read More
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="project-item h-100 wow fadeInUp" data-wow-delay="0.3s">
+          <div className="project-img">
+            <img
+              src="/assets/img/projects-1.jpg"
+              className="img-fluid w-100 rounded"
+              alt="Image"
+            />
+          </div>
+          <div className="project-content bg-light rounded p-4">
+            <div className="project-content-inner">
+              <div className="project-icon mb-3">
+                <i className="fas fa-signal fa-4x text-primary" />
+              </div>
+              <p className="text-dark fs-5 mb-3">Marketing Strategy</p>
+              <Link to="#" className="h4">
+                Product Sailing Marketing Strategy For Improve Business
+              </Link>
+              <div className="pt-4">
+                <Link className="btn btn-light rounded-pill py-3 px-5" to="#">
+                  Read More
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="project-item h-100">
+          <div className="project-img">
+            <img
+              src="/assets/img/projects-1.jpg"
+              className="img-fluid w-100 rounded"
+              alt="Image"
+            />
+          </div>
+          <div className="project-content bg-light rounded p-4">
+            <div className="project-content-inner">
+              <div className="project-icon mb-3">
+                <i className="fas fa-signal fa-4x text-primary" />
+              </div>
+              <p className="text-dark fs-5 mb-3">Marketing Strategy</p>
+              <Link to="#" className="h4">
+                Product Sailing Marketing Strategy For Improve Business
+              </Link>
+              <div className="pt-4">
+                <Link className="btn btn-light rounded-pill py-3 px-5" to="#">
+                  Read More
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {/* Project End */}
+  {/* FAQ Start */}
+  <div className="container-fluid faq pb-5">
+    <div className="container pb-5">
       <div className="row g-5 align-items-center">
         <div className="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
           <div className="pb-5">
@@ -160,9 +254,8 @@ export default function Faqs(){
       </div>
     </div>
   </div>
-  {/* FAQs End */}
+  {/* FAQ End */}
   </main>
 </>
-
     )
 }
