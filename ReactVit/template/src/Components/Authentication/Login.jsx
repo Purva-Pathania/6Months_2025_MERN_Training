@@ -44,7 +44,7 @@ export default function Login(){
           <br/>
           <PulseLoader color="skyblue" loading={load}/>
         <form onSubmit={submitForm}>
-                <div className={`row g-3 justify-content-center ${load=="true" && "d-none"}`}>
+                <div className={`row g-3 justify-content-center ${load==true && "d-none"}`}>
                   <div className="col-md-5">
                     <div className="form-floating">
                       <input
@@ -60,7 +60,7 @@ export default function Login(){
                   </div>
                 </div>
                 <br/>
-                <div className="row g-3 justify-content-center">
+                <div className={`row g-3 justify-content-center ${load==true && "d-none"}`}>
                   <div className="col-md-5">
                     <div className="form-floating">
                       <input

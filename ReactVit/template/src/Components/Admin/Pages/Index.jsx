@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import PageTitle from "../Layouts/PageTitle";
-
 export default function Home(){
     return(
       <>
       <main className="main">
-              <PageTitle>Home</PageTitle>
       {/* Carousel Start */}
-      <div className="header-carousel owl-carousel">
+        <div className="header-carousel owl-carousel">
         <div className="header-carousel-item">
           <div className="header-carousel-item-img-1">
             <img src="/assets/img/carousel-1.jpg" className="img-fluid w-100" alt="Image" />

@@ -23,7 +23,9 @@ export default function PageTitle({children}){
             <li className="breadcrumb-item">
               <Link to="#">Pages</Link>
             </li>
-            <li className="breadcrumb-item active text-primary">Contact</li>
+            <li className="breadcrumb-item">
+            <Link to="/contact">Contact</Link>
+            </li>
           </ol>
         </div>
       </div>

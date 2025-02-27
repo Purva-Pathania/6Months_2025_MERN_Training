@@ -1,8 +1,31 @@
-import { Link, useLocation } from "react-router-dom";
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Modal from "react-modal"
+import { useState } from "react";
+import { toast } from "react-toastify";
 export default function Header(){
     let loc = useLocation();
     let path = loc.pathname;
+    const[isOpen,setIsOpen]=useState(false)
+    const  nav=useNavigate()
+    const customStyles = {
+      content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+      },
+    };
+    function setLog(){
+      toast.success("Logout Successfully!")
+      setIsOpen(false)
+      nav("/login")
+    }
+    function setLogin(){
+      setIsOpen(false)
+      nav("/")
+    }
     return(
         <>
         {/* Topbar Start */}
@@ -118,10 +141,16 @@ export default function Header(){
                     <Link to="/404" className={`dropdown-item ${path=="/404" && "active"}`}>
                       404 Page
                     </Link>
+                    <Link to="/logout" onClick={()=>{setIsOpen(true)}} className={`dropdown-item ${path=="/logout" && "active"}`}>
+                      LogOut
+                    </Link>
                   </div>
                 </div>
                 <Link to="/contact" className={`nav-item nav-link ${path=="/contact" && "active"}`}>
                   Contact
+                </Link>
+                <Link to="/login" className={`nav-item nav-link ${path=="/login" && "active"}`}>
+                  Login
                 </Link>
               </div>
               <div className="d-flex align-items-center flex-nowrap pt-xl-0">
@@ -182,7 +211,17 @@ export default function Header(){
         </div>
       </div>
       {/* Modal Search End */}
-        
+        <Modal isOpen={isOpen} style={customStyles}>
+          <div className="d-flex justify-content-between align-items-center">
+            <h5 className=" text-center ">Logout Confirmation</h5>
+            <button onClick={()=>{setIsOpen(false)}} className="btn-close"></button>
+          </div>
+            <p className="text-center mt-2">Are you sure you want to logout?</p>
+            <div className="d-flex justify-content-center">
+            <button className="btn btn-primary me-2" onClick={setLog}>Confirm</button>
+            <button className="btn btn-outline-primary" onClick={setLogin}>Cancel</button>
+          </div>
+        </Modal>
     </>
     )
 }

@@ -31,6 +31,7 @@
 
 
     // Hero Header carousel
+    $(document).ready(function(){
     $(".header-carousel").owlCarousel({
         items: 1,
         autoplay: true,
@@ -45,10 +46,11 @@
             '<i class="bi bi-arrow-right"></i>'
         ]
     });
-
+})
 
 
     // Project carousel
+    $(document).ready(function(){
     $(".project-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1000,
@@ -80,8 +82,9 @@
             }
         }
     });
-
+})
     // testimonial carousel
+    $(document).ready(function(){
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
         smartSpeed: 1500,
@@ -113,7 +116,7 @@
             }
         }
     });
-
+})
 
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({

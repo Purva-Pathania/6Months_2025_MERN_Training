@@ -17,6 +17,7 @@ import Layout from './Components/Admin/Layouts/Layout'
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from 'react-toastify';
 import Cindex from './Components/Client/Pages/Cindex'
+import Logout from './Components/Authentication/Logout'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/faqs" element={<Faqs/>}/>
           <Route path="/404" element={<Four404/>}/>
           <Route path="/login" element={<Login/>}/>
+          <Route path="/logout" element={<Logout/>}/>
           <Route path="/project" element={<Project/>}/>
           <Route path="/services" element={<Services/>}/>
           <Route path="/testimonial" element={<Testimonial/>}/>
