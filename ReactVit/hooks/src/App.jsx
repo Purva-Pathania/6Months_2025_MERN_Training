@@ -8,13 +8,16 @@ import Array from './Components/Array'
 import Email from './Components/Email'
 import RegisterPage from './Components/RegisterPage'
 import ToDoList from './Components/ToDoList'
+import Nav from './Components/Nav&Tabs/Nav'
 function App() {
 
   return (
     <>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Counter/>}/>
+      <Route path="/nav" element={<Nav/>}/>
+      <Route path="/" element={<Parent/>}/>
+      <Route path="/counter" element={<Counter/>}/>
       <Route path="/array" element={<Array/>}/>
       <Route path="/email" element={<Email/>}/>
       <Route path="/register" element={<RegisterPage/>}/>
