@@ -9,6 +9,8 @@ import Email from './Components/Email'
 import RegisterPage from './Components/RegisterPage'
 import ToDoList from './Components/ToDoList'
 import Nav from './Components/Nav&Tabs/Nav'
+import PDFComponent from './Components/ReactPDF/PDFComponent'
+import data from './Components/ReactPDF/data'
 function App() {
 
   return (
@@ -16,12 +18,12 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/nav" element={<Nav/>}/>
-      <Route path="/" element={<Parent/>}/>
       <Route path="/counter" element={<Counter/>}/>
       <Route path="/array" element={<Array/>}/>
       <Route path="/email" element={<Email/>}/>
       <Route path="/register" element={<RegisterPage/>}/>
       <Route path="/todolist" element={<ToDoList/>}/>
+      <Route path="/pdf" element={<PDFComponent data={data}/>}/>
     </Routes>
     </BrowserRouter>
     </>
