@@ -8,7 +8,6 @@ import Contact from './Components/Admin/Pages/Contact'
 import Index from './Components/Admin/Pages/Index'
 import Findex from './Components/FreeLancer/Pages/Findex'
 import{BrowserRouter, Route, Routes} from "react-router-dom"
-import Login from './Components/Authentication/Login'
 import Project from './Components/Admin/Pages/Project'
 import Services from './Components/Admin/Pages/Services'
 import Testimonial from './Components/Admin/Pages/Testimonial'
@@ -18,6 +17,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from 'react-toastify';
 import Cindex from './Components/Client/Pages/Cindex'
 import Logout from './Components/Authentication/Logout'
+import Log from './Components/Authentication/Login/Log'
 
 function App() {
   return (
@@ -31,7 +31,6 @@ function App() {
           <Route path="/blog" element={<Blog/>}/>
           <Route path="/faqs" element={<Faqs/>}/>
           <Route path="/404" element={<Four404/>}/>
-          <Route path="/login" element={<Login/>}/>
           <Route path="/logout" element={<Logout/>}/>
           <Route path="/project" element={<Project/>}/>
           <Route path="/services" element={<Services/>}/>
@@ -40,6 +39,7 @@ function App() {
       </Route>
       <Route path="/freelancer/index" element={<Findex/>}/>
       <Route path="/client/index" element={<Cindex/>}/>
+      <Route path="/log" element={<Log/>}/>
     </Routes>
     </BrowserRouter>
     <ToastContainer/>
