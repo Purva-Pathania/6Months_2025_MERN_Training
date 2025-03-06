@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import Modal from "react-modal";
-import PageTitle from '../Admin/Layouts/PageTitle'
+import PageTitle from '../Developer/Layouts/PageTitle'
 
 export default function Logout(){
     return(
