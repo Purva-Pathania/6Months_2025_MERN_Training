@@ -17,16 +17,9 @@ import { ToastContainer } from 'react-toastify';
 import Cindex from './Components/Client/Pages/Cindex'
 import Logout from './Components/Authentication/Logout'
 import Log from './Components/Authentication/Login/Log'
-import TableComponent from './Components/Admin/Pages/TableComponent'
+import Client from './Components/Admin/Pages/UserManagement/Client/Client'
 
 function App() {
-  const sampleData = [
-    { city: "Lyon", banner: "SUPER", area: "CENTRE-EST", type: "Franchise", state: "OPEN", avgBasket: 31.53 },
-    { city: "Paris", banner: "SUPER", area: "REGION PARISIENNE", type: "Franchise", state: "OPEN", avgBasket: 27.32 },
-    { city: "La Gorgue", banner: "HYPER", area: "NORD", type: "Franchise", state: "CLOSED", avgBasket: 0.0 },
-    { city: "Béziers", banner: "SUPER", area: "SUD EST", type: "Franchise", state: "OPEN", avgBasket: 31.53 },
-    { city: "Pauillac", banner: "HYPER", area: "SUD OUEST", type: "Non franchise", state: "OPEN", avgBasket: 24.72 },
-  ];
   return (
     <>
     <BrowserRouter>
@@ -46,7 +39,7 @@ function App() {
       </Route>
       <Route path="/client/index" element={<Cindex/>}/>
       <Route path="/log" element={<Log/>}/>
-      <Route path="/table" element={<TableComponent data={sampleData} />}/>
+      <Route path="/table" element={<Client/>}/>
     </Routes>
     </BrowserRouter>
     <ToastContainer/>

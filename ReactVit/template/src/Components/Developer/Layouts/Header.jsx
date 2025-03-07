@@ -91,7 +91,7 @@ export default function Header(){
             <Link to="/" className="navbar-brand p-0">
               <h1 className="text-primary m-0">
                 <i className="fas fa-donate me-3" />
-                Investa
+                Skill Hunt
               </h1>
               {/* <img src="img/logo.png" alt="Logo"> */}
             </Link>
