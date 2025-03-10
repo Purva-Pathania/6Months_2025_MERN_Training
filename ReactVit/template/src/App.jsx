@@ -18,6 +18,7 @@ import Cindex from './Components/Client/Pages/Cindex'
 import Logout from './Components/Authentication/Logout'
 import Log from './Components/Authentication/Login/Log'
 import Client from './Components/Admin/Pages/UserManagement/Client/Client'
+import MyRegister from './Components/Authentication/Register/Reg'
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
       <Route path="/client/index" element={<Cindex/>}/>
       <Route path="/log" element={<Log/>}/>
       <Route path="/table" element={<Client/>}/>
+      <Route path="/reg" element={<MyRegister/>}/>
     </Routes>
     </BrowserRouter>
     <ToastContainer/>
