@@ -1,9 +1,11 @@
 const express = require("express")
+require("./server/config/db")
 const app = express()
 const PORT = 5000
+app.use(express.urlencoded({extended:true}))
+app.use(express.json({limit:"40mb"}))
 const api = require("./server/routes/ApiRoutes")
 app.use("/api",api)
-const db = require("./server/config/db")
 app.listen(PORT,()=>{
     console.log("SERVER is running at",PORT)
 }) 

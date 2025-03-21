@@ -1,0 +1,14 @@
+const mongoose=require("mongoose")
+let productSchema = mongoose.Schema({
+    category:{type:String, default:""},
+    brand:{type:String, default:""},
+    name:{type:String, default:""},
+    price:{type:Number, default:0},
+    quantity:{type:Number, default:0},
+    desc:{type:String, default:""},
+    image:{type:String, default:""},
+    stock:{type:Boolean, default:true},
+    status:{type:Boolean, default:true},
+    createdAt:{type:Date, default:Date.now()}
+})
+module.exports=mongoose.model("productModel", productSchema)
