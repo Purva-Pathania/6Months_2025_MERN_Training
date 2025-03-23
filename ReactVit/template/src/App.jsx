@@ -18,9 +18,9 @@ import Logout from './Components/Authentication/Logout'
 import Log from './Components/Authentication/Login/Log'
 import Client from './Components/Admin copy/Pages/UserManagement/Client/Client'
 import Dev from './Components/Admin copy/Pages/UserManagement/Developer/Dev'
-import Project from './Components/Admin copy/Pages/ProjectManagement/Project'
 import Bid from './Components/Admin copy/Pages/BiddingManagement/Bid'
 import Add from './Components/Admin copy/Pages/Technology/Add'
+import Project from './Components/Client/Pages/ProjectManagement/Project'
 function App() {
   return (
     <>
@@ -43,10 +43,9 @@ function App() {
       
       <Route path="/table" element={<Client/>}/>
       <Route path="/dev" element={<Dev/>}/>
-      <Route path="/project1" element={<Project/>}/>
       <Route path="/bid" element={<Bid/>}/>
       <Route path="/add" element={<Add/>}/>
-      
+      <Route path="/pro" element={<Project/>}/>
     </Routes>
     </BrowserRouter>
     <ToastContainer/>

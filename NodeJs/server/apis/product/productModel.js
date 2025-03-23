@@ -1,5 +1,6 @@
 const mongoose=require("mongoose")
 let productSchema = mongoose.Schema({
+    autoId:{type:Number, default:1},
     category:{type:String, default:""},
     brand:{type:String, default:""},
     name:{type:String, default:""},
