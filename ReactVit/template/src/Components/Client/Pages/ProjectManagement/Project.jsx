@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Project.css'; 
+
 
 const Project = () => {
   const data = [
@@ -50,20 +50,36 @@ const Project = () => {
   };
 
   return (
-    <div className="accordion-container">
+    <>
+    
+    <div className="accordion bg-light rounded p-4" id="accordionExample">
       {projects.map((el, index) => (
-        <div key={index} className="accordion-section">
-          <div className="accordion-header" onClick={() => toggleAccordion(index)}>
+        <div key={index} className="accordion-item border-0 mb-4">
+          <div className="accordion-header" id="headingOne" onClick={() => toggleAccordion(index)}>
+          <button
+                  className="accordion-button text-dark fs-5 fw-bold rounded-top"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseOne"
+                  aria-expanded="true"
+                  aria-controls="collapseTOne"
+                >
             <img src={el.logo} alt="Logo" className="logo img-fluid" style={{height:"100px", width:"100px"}} />
             <h3>{el.title}</h3>
             <span>{el.developer}</span>
             <span >{el.deadline}</span>
             <button onClick={(e) => handleEditClick(e, index)} className="btn btn-primary" style={{marginRight:"20px"}}>Edit</button>
             <button onClick={(e) => handleDelete(e, index)} className="btn btn-outline-danger">Delete</button>
+          </button>
           </div>
-
+          <div
+                id="collapseOne"
+                className="accordion-collapse collapse show"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
           {openIndex === index && (
-            <div className="accordion-body">
+            <div className="accordion-body my-2">
               {editIndex === index ? (
                 <>
                   <p>
@@ -111,7 +127,7 @@ const Project = () => {
                       <p><strong>Deadline:</strong> {el.deadline}</p>
                       <p><strong>Bid Amount:</strong> {el.bidAmount}</p>
                       <p><strong>Submission Date:</strong> {el.submissionDate}</p>
-                      <p><strong>Rating:</strong><span style={{color:"gold", fontSize:"20px"}}> {'★'.repeat(el.rating)}</span></p>
+                      <p><strong>Rating:</strong><span style={{color:"gold", fontSize:"20px"}}>{'★'.repeat(el.rating)}{'☆'.repeat(5 - el.rating)}</span></p>
                     </div>
                   </div>
                 </div>
@@ -119,10 +135,12 @@ const Project = () => {
               )}
             </div>
           )}
+          </div>
         </div>
       ))}
     </div>
-  );
+  </>
+  )
 };
 
 export default Project

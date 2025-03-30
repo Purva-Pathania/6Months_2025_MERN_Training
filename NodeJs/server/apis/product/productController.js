@@ -1,5 +1,5 @@
 const ProductModel = require("./productModel")
-const product = (req,res)=>{
+const add = (req,res)=>{
     let validation=""
     if(!req.body.name){
         validation+="Name is required"
@@ -9,6 +9,9 @@ const product = (req,res)=>{
     }
     if(!req.body.quantity){
         validation+="Quantity is required"
+    }
+    if(!req.file){
+        validation+="Image is required"
     }
     if(!!validation.trim()){
         res.json({
@@ -28,7 +31,7 @@ const product = (req,res)=>{
                 productObj.name = req.body.name
                 productObj.price = req.body.price
                 productObj.quantity = req.body.quantity
-                productObj.image = req.body.image
+                productObj.image = "product_images/" + req.file?.filename
                 productObj.stock = req.body.stock
                 productObj.desc = req.body.desc
                 productObj.save()
@@ -98,4 +101,214 @@ all=(req,res)=>{
         message:"Internal Server Error"
     })
 }
-module.exports={product, all}
+single=(req,res)=>{
+    let validation=""
+    let formData=req.body
+    if(!formData._id){
+        validation+="_id is required"
+    }
+    if(!!validation.trim()){
+        res.json({
+            status:422,
+            success:false,
+            message:validation
+        })
+    }else{
+        ProductModel.findOne({_id:formData._id})
+        .then((productData)=>{
+            if(!productData){
+                res.json({
+                    status:404,
+                    success:false,
+                    message:"No Product Found"
+                })
+            }else{
+                res.json({
+                    status:200,
+                    success:true,
+                    message:"Product Found",
+                    data:productData
+                })
+            }
+        }).catch((err=>{
+            res.json({
+                status:500,
+                success:false,
+                message:"Internal Server Error",
+                error:err
+            })
+        }))
+    }
+}
+deleteProduct=(req,res)=>{
+    let validation=""
+    let formData=req.body
+    if(!formData._id){
+        validation+="_id is required"
+    }
+    if(!!validation.trim()){
+        res.json({
+            status:422,
+            success:false,
+            message:validation
+        })
+    }else{
+        ProductModel.findOne({_id:formData._id})
+        .then((productData)=>{
+            if(!productData){
+                res.json({
+                    status:404,
+                    success:false,
+                    message:"Product doesn't exist"
+                })
+            }else{
+                ProductModel.deleteOne({_id:formData._id})
+                .then(()=>{
+                    res.json({
+                        status:200,
+                        success:true,
+                        message:"Product Deleted Successfully!!!"
+                    })
+                })
+                .catch((err)=>{
+                    res.json({
+                        status:500,
+                        success:false,
+                        message:"Internal Server Error",
+                        error:err
+                    })
+                })
+            }
+        })
+        .catch((err)=>{
+            res.json({
+                status:500,
+                success:false,
+                message:"Internal Server Error",
+                error:err
+            })
+        })
+    }
+}
+update=(req,res)=>{
+    let validation=""
+    let formData=req.body
+    if(!formData._id){
+        validation+="_id is required"
+    }
+    if(!!validation.trim()){
+        res.json({
+            status:422,
+            success:false,
+            message:validation
+        })
+    }else{
+        ProductModel.findOne({_id:formData._id})
+        .then((productData)=>{
+            if(!productData){
+                res.json({
+                    status:404,
+                    success:false,
+                    message:"Product Data doesn't exist",
+                })
+            }else{
+                if(!!formData.name){
+                    productData.name=formData.name
+                }
+                if(!!formData.desc){
+                    productData.desc=formData.desc
+                }
+                if(!!formData.image){
+                    productData.image=formData.image
+                }
+                if(!!formData.price){
+                    productData.price=formData.price
+                }
+                if(!!formData.category){
+                    productData.category=formData.category
+                }
+                if(!!formData.quantity){
+                    productData.quantity=formData.quantity
+                }
+                productData.save()
+                .then((productData)=>{
+                    res.json({
+                        status:200,
+                        success:true,
+                        message:"Product Data updated successfully",
+                        data:productData
+                    })
+                })
+                .catch((err)=>{
+                    res.json({
+                        status:500,
+                        success:true,
+                        message:"Internal Server Error",
+                        error:err
+                    })
+                })
+            }
+        })
+        .catch((err)=>{
+            res.json({
+                status:500,
+                success:true,
+                message:"Internal Server Error",
+                error:err
+            })
+        })
+    }
+}
+changeStatus=(req,res)=>{
+    let validation=""
+    let formData=req.body
+    if(!formData._id){
+        validation+="_id is required"
+    }
+    if(!!validation.trim()){
+        res.json({
+            status:422,
+            success:false,
+            message:validation
+        })
+    }else{
+        ProductModel.findOne({_id:formData._id})
+        .then((productData)=>{
+            if(!productData){
+                res.json({
+                    status:404,
+                    success:false,
+                    message:"Product data not found"
+                })
+            }else{
+                productData.status=!productData.status
+                productData.save()
+                .then((productData)=>{
+                    res.json({
+                        status:200,
+                        success:true,
+                        message:"Product Status updated Successfully!!!",
+                        data:productData
+                    })
+                })
+                .catch((err)=>{
+                    res.json({
+                        status:500,
+                        success:false,
+                        message:"Internal Server Error",
+                        error:err
+                    })
+                })
+            }
+        })
+        .catch((err)=>{
+            res.json({
+                status:500,
+                success:false,
+                message:"Internal Server Error",
+                error:err
+            })
+        })
+    }
+}
+module.exports={add, all, single, deleteProduct, update, changeStatus}

@@ -1,5 +1,5 @@
 const CategoryModel = require("./CategoryModel")
-const category = (req,res)=>{
+const add = (req,res)=>{
     let validation=""
     if(!req.body.categoryName){
         validation+="Category Name is required, "
@@ -88,5 +88,202 @@ all=(req,res)=>{
         message:"Internal server Error"
     })
 }
-
-module.exports={category, all}
+single=(req,res)=>{
+    let validation=""
+    let formData=req.body
+    if(!formData._id){
+        validation+="_id is required"
+    }
+    if(!!validation.trim()){
+        res.json({
+            status:422,
+            success:false,
+            message:validation
+        })
+    }else{
+        CategoryModel.findOne({_id:formData._id})
+        .then((categoryData)=>{
+            if(!categoryData){
+                res.json({
+                    status:404,
+                    success:false,
+                    message:"No Category Found"
+                })
+            }else{
+                res.json({
+                    status:200,
+                    success:true,
+                    message:"Category Found",
+                    data:categoryData
+                })
+            }
+        }).catch((err=>{
+            res.json({
+                status:500,
+                success:false,
+                message:"Internal Server Error",
+                error:err
+            })
+        }))
+    }
+}
+deleteCategory=(req,res)=>{
+    let validation=""
+    let formData=req.body
+    if(!formData._id){
+        validation+="_id is required"
+    }
+    if(!!validation.trim()){
+        res.json({
+            status:422,
+            success:false,
+            message:validation
+        })
+    }else{
+        CategoryModel.findOne({_id:formData._id})
+        .then((categoryData)=>{
+            if(!categoryData){
+                res.json({
+                    status:404,
+                    success:false,
+                    message:"Category doesn't exist"
+                })
+            }else{
+                CategoryModel.deleteOne({_id:formData._id})
+                .then(()=>{
+                    res.json({
+                        status:200,
+                        success:true,
+                        message:"Category Deleted Successfully!!!"
+                    })
+                })
+                .catch((err)=>{
+                    res.json({
+                        status:500,
+                        success:false,
+                        message:"Internal Server Error",
+                        error:err
+                    })
+                })
+            }
+        })
+        .catch((err)=>{
+            res.json({
+                status:500,
+                success:false,
+                message:"Internal Server Error",
+                error:err
+            })
+        })
+    }
+}
+update=(req,res)=>{
+    let validation=""
+    let formData=req.body
+    if(!formData._id){
+        validation+="_id is required"
+    }
+    if(!!validation.trim()){
+        res.json({
+            status:422,
+            success:false,
+            message:validation
+        })
+    }else{
+        CategoryModel.findOne({_id:formData._id})
+        .then((categoryData)=>{
+            if(!categoryData){
+                res.json({
+                    status:404,
+                    success:false,
+                    message:"Data doesn't exist",
+                })
+            }else{
+                if(!!formData.categoryName){
+                    categoryData.categoryName=formData.categoryName
+                }
+                if(!!formData.description){
+                    categoryData.description=formData.description
+                }
+                categoryData.save()
+                .then((categoryData)=>{
+                    res.json({
+                        status:200,
+                        success:true,
+                        message:"Category Data updated successfully",
+                        data:categoryData
+                    })
+                })
+                .catch((err)=>{
+                    res.json({
+                        status:500,
+                        success:true,
+                        message:"Internal Server Error",
+                        error:err
+                    })
+                })
+            }
+        })
+        .catch((err)=>{
+            res.json({
+                status:500,
+                success:true,
+                message:"Internal Server Error",
+                error:err
+            })
+        })
+    }
+}
+changeStatus=(req,res)=>{
+    let validation=""
+    let formData=req.body
+    if(!formData._id){
+        validation+="_id is required"
+    }
+    if(!!validation.trim()){
+        res.json({
+            status:422,
+            success:false,
+            message:validation
+        })
+    }else{
+        CategoryModel.findOne({_id:formData._id})
+        .then((categoryData)=>{
+            if(!categoryData){
+                res.json({
+                    status:404,
+                    success:false,
+                    message:"Category data not found"
+                })
+            }else{
+                categoryData.status=!categoryData.status
+                categoryData.save()
+                .then((categoryData)=>{
+                    res.json({
+                        status:200,
+                        success:true,
+                        message:"Category Status updated Successfully!!!",
+                        data:categoryData
+                    })
+                })
+                .catch((err)=>{
+                    res.json({
+                        status:500,
+                        success:false,
+                        message:"Internal Server Error",
+                        error:err
+                    })
+                })
+            }
+        })
+        .catch((err)=>{
+            res.json({
+                status:500,
+                success:false,
+                message:"Internal Server Error",
+                error:err
+            })
+        })
+    }
+}
+module.exports={add, all, single, update, deleteCategory, changeStatus}

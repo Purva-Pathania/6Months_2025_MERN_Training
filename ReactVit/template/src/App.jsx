@@ -20,7 +20,12 @@ import Client from './Components/Admin copy/Pages/UserManagement/Client/Client'
 import Dev from './Components/Admin copy/Pages/UserManagement/Developer/Dev'
 import Bid from './Components/Admin copy/Pages/BiddingManagement/Bid'
 import Add from './Components/Admin copy/Pages/Technology/Add'
-import Project from './Components/Client/Pages/ProjectManagement/Project'
+import History from './Components/Developer/Pages/History/History'
+import Project from './Components/Developer/Pages/ProjectManagement/Project'
+import Rating from './Components/Developer/Pages/Rating'
+import DevBidding from './Components/Developer/DevBidding'
+import ClientBidding from './Components/Client/ClientBidding'
+
 function App() {
   return (
     <>
@@ -46,6 +51,10 @@ function App() {
       <Route path="/bid" element={<Bid/>}/>
       <Route path="/add" element={<Add/>}/>
       <Route path="/pro" element={<Project/>}/>
+      <Route path="/h" element={<History/>}/>
+      <Route path="/rat" element={<Rating/>}/>
+      <Route path="/dev/bid" element={<DevBidding/>}/>
+      <Route path="/cli/bid" element={<ClientBidding/>}/>
     </Routes>
     </BrowserRouter>
     <ToastContainer/>
