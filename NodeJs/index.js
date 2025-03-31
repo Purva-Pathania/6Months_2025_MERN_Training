@@ -2,6 +2,7 @@ const express = require("express")
 require("./server/config/db")
 const app = express()
 const PORT = 5000
+const seed = require("./server/config/seed")
 app.use(express.urlencoded({extended:true}))
 app.use(express.json({limit:"40mb"}))
 app.use(express.static("./server/public/"))

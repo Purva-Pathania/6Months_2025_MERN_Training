@@ -10,9 +10,6 @@ const add = (req,res)=>{
     if(!req.body.quantity){
         validation+="Quantity is required"
     }
-    if(!req.file){
-        validation+="Image is required"
-    }
     if(!!validation.trim()){
         res.json({
             status:400,
@@ -27,7 +24,7 @@ const add = (req,res)=>{
                 let total = await ProductModel.countDocuments().exec()
                 productObj.autoId = total+1
                 productObj.category = req.body.category
-                productObj.brand = req.body.brand
+                productObj.brandId = req.body.brandId
                 productObj.name = req.body.name
                 productObj.price = req.body.price
                 productObj.quantity = req.body.quantity
@@ -77,6 +74,11 @@ all=(req,res)=>{
     delete formData.limit
     delete formData.currentPage
     ProductModel.find(formData)
+    .populate({
+        path:"brandId",
+        select:"brandName image"
+    })
+  //  .populate("brandId")
     .limit(limit)
     .skip((currentPage-1)*limit)
     .then((productData)=>{
