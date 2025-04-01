@@ -1,8 +1,10 @@
 const CategoryController = require("../apis/category/CategoryController")
 const brandController = require("../apis/brand/brandController")
 const productController = require("../apis/product/productController")
+const CustomerController = require("../apis/customers/CustomerController")
 const router = require("express").Router()
 const multer = require("multer")
+router.post("/customer/register", CustomerController.register)
 router.post("/category/add", CategoryController.add)
 const brandStorage = multer.diskStorage({
     destination:function(req,file,cb){
