@@ -1,4 +1,5 @@
 const BrandModel = require("./brandModel")
+const { uploadImg } = require("../../utilities/helper")
 const add= (req,res)=>{
     let validation = ""
     if(!req.body.brandName){
@@ -21,7 +22,18 @@ const add= (req,res)=>{
                 let total=await BrandModel.countDocuments().exec()
                 brandObj.autoId = total+1
                 brandObj.brandName = req.body.brandName
-                brandObj.image = "brand_images/" + req.file?.filename
+                //brandObj.image = "brand_images/" + req.file?.filename
+                try{
+                    let url=await uploadImg(req.file.buffer)
+                    brandObj.image=url
+                }
+                catch(err){
+                    res.json({
+                        status:500,
+                        success:false,
+                        message:"error while uploading image!!"
+                    })
+                }
                 brandObj.save()
                 .then((brandData)=>{
                     res.json({
@@ -192,7 +204,7 @@ update=(req,res)=>{
         })
     }else{
         BrandModel.findOne({_id:formData._id})
-        .then((brandData)=>{
+        .then(async(brandData)=>{
             if(!brandData){
                 res.json({
                     status:404,
@@ -202,6 +214,19 @@ update=(req,res)=>{
             }else{
                 if(!!formData.brandName){
                     brandData.brandName=formData.brandName
+                }
+                if(!!req.file){
+                    try{
+                        let url=await uploadImg(req.file.buffer)
+                        brandData.image=url
+                    }
+                    catch(err){
+                        res.json({
+                            status:500,
+                            success:false,
+                            message:"error while uploading image"
+                        })
+                    }
                 }
                 brandData.save()
                 .then((brandData)=>{

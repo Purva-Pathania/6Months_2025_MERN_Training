@@ -141,16 +141,10 @@ export default function Header(){
                     <Link to="/404" className={`dropdown-item ${path=="/404" && "active"}`}>
                       404 Page
                     </Link>
-                    <Link to="/logout" onClick={()=>{setIsOpen(true)}} className={`dropdown-item ${path=="/logout" && "active"}`}>
-                      LogOut
-                    </Link>
                   </div>
                 </div>
                 <Link to="/contact" className={`nav-item nav-link ${path=="/contact" && "active"}`}>
                   Contact
-                </Link>
-                <Link to="/login" className={`nav-item nav-link ${path=="/login" && "active"}`}>
-                  Login
                 </Link>
               </div>
               <div className="d-flex align-items-center flex-nowrap pt-xl-0">
